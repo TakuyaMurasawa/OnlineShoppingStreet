@@ -1,2 +1,2 @@
-class CartItmesController < ApplicationController
+class Public::CartItmesController < ApplicationController
 end
