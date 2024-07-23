@@ -21,6 +21,19 @@
     </div>
     <div class="col-lg-10 i-index-empty">
       <h4>商品一覧</h4>
+      <div class="yoko">
+        <% @items.each do |item| %>
+        <div class="tate">
+          <p>
+            <%= link_to item_path(item) do %> <%= attachment_image_tag item,
+            :image, :fill, 250, 125, format: 'jpeg', fallback: "no_image.png",
+            class: "img" %> <% end %>
+          </p>
+          <p><%= item.name %></p>
+          <p>￥<%= item.add_tax_price.to_s(:delimited) %></p>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
